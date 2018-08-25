@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'activerecord', '~> 4.2'
+gem 'activerecord'
 gem 'omniauth-github'
-gem 'pg', '~> 0.21'
+gem 'pg'
 gem 'rake'
-gem "sinatra", "~> 2.0"
+gem "sinatra"
 gem "sinatra-contrib"
-gem 'sinatra-activerecord', '2.0.13'
+gem 'sinatra-activerecord'
 gem 'sinatra-flash'
 
 group :development, :test do
