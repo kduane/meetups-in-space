@@ -1,6 +1,6 @@
 class CreateMeetups < ActiveRecord::Migration[5.2]
   def change
-    create table :meetups do |t|
+    create_table :meetups do |t|
       t.string :name, null: false
       t.string :details, null: false
 

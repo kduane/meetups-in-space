@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2014_06_06_200404) do
+ActiveRecord::Schema.define(version: 2018_08_26_193744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "meetups", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "details", null: false
+  end
+
+  create_table "signups", force: :cascade do |t|
+    t.bigint "meetup_id"
+    t.bigint "user_id"
+    t.index ["meetup_id"], name: "index_signups_on_meetup_id"
+    t.index ["user_id"], name: "index_signups_on_user_id"
+  end
 
   create_table "users", id: :serial, force: :cascade do |t|
     t.string "provider", null: false
